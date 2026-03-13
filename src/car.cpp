@@ -5,12 +5,10 @@
 // placeholder pin 1 for pins
 // i dont have an esp for pin reference
 
-#define en1Pin 1
-#define en2Pin 1
-#define in1Pin 1
-#define in2Pin 1
-#define in3Pin 1
-#define in4Pin 1
+#define in1Pin 21
+#define in2Pin 19
+#define in3Pin 18
+#define in4Pin 5
 
 int speed = 255;
 bool out1 = true;
@@ -28,8 +26,6 @@ int currComand = 0;
 
 void setup() {
   Serial.begin(115200);
-  pinMode(en1Pin, OUTPUT);
-  pinMode(en2Pin, OUTPUT);
   pinMode(in1Pin, OUTPUT);
   pinMode(in2Pin, OUTPUT);
   pinMode(in3Pin, OUTPUT);
@@ -104,12 +100,7 @@ void updateCarMovement() {
   }
 }
 
-void loop() {
-  analogWrite(en1Pin, speed);
-  analogWrite(en2Pin, speed);
-
-  reverseCheck();
-}
+void loop() { reverseCheck(); }
 
 void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len) {
   memcpy(&command_data, incomingData, sizeof(command_data));

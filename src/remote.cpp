@@ -2,8 +2,8 @@
 #include <WiFi.h>
 #include <esp_now.h>
 
-#define jsVrY 1
-#define jsVrX 1
+#define jsVrY 4
+#define jsVrX 2
 
 uint8_t broadcastAddress[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}; // temp
 
