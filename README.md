@@ -2,13 +2,13 @@
 
 ## What This Project Is
 
-This is a RC car built around two ESP32 boards. One ESP32 acts as the handheld controller and reads a joystick, and the second ESP32 sits on the car and drives the motors based on commands sent by second ESP32 using ESP-NOW protocol.
+This is a RC car built around two ESP32 boards. One ESP32 will act as the handheld controller and read a joystick, and the second ESP32 sits on the car and drives the motors based on commands sent by second ESP32 using ESP-NOW protocol.
 
 The current repository includes:
 
 - ESP32 code for the [remote](src/car.txt) and the [car](./src/car.txt)
 - A helper sketch for reading an ESP32 MAC address
-- A [Fritzing](https://fritzing.org/) wiring design in `design.fzz`
+- A [Fritzing](https://fritzing.org/) design for wiring in `design.fzz`
 - A Fusion360 design of car
 
 ## Why I Made It
@@ -17,7 +17,7 @@ The main goal was to learn how to use joystick input, ESP-NOW communication and 
 
 ## Features
 
-- ESP32-to-ESP32 wireless communication over ESP-NOW
+- ESP32-to-ESP32 wireless communication using ESP-NOW
 - Joystick-based steering and drive input
 - Simple motor driver control for forward, left, right, and stop states
 - MAC address utility sketch to pair the boards
@@ -50,9 +50,9 @@ The current wiring diagram is stored as [design.fzz](design.fzz).
 
 Main control connections used in firmware right now:
 
-- Remote joystick Y-axis: GPIO 4
-- Remote joystick X-axis: GPIO 2
-- Car motor driver pins: GPIO 21, 19, 18, 5
+- Remote joystick Y: GPIO 4
+- Remote joystick X: GPIO 2
+- Car motor driver pins: GPIO 21, 19, 18, 5 (check code for specific pins)
 
 ## Build Photos
 
@@ -62,21 +62,23 @@ to be added latter
 
 the car 3d model can be found in [cad/](cad/)
 
+also on fusion [here](https://a360.co/4bC1af7)
+
 ### Side
 
-![Screenshot 2026-03-18 at 2.46.13 PM](https://stasis.hackclub-assets.com/images/1773825379975-kyb7a6.png)
+![Side](https://stasis.hackclub-assets.com/images/1773825379975-kyb7a6.png)
 
 ### Front
 
-![Screenshot 2026-03-18 at 2.46.22 PM](https://stasis.hackclub-assets.com/images/1773825389459-n9o9y4.png)
+![Front](https://stasis.hackclub-assets.com/images/1773825389459-n9o9y4.png)
 
 ### Top
 
-![Screenshot 2026-03-18 at 2.46.36 PM](https://stasis.hackclub-assets.com/images/1773825404753-ic3u4r.png)
+![Top](https://stasis.hackclub-assets.com/images/1773825404753-ic3u4r.png)
 
 ### Bottom
 
-![Screenshot 2026-03-18 at 2.47.37 PM](https://stasis.hackclub-assets.com/images/1773825465453-5ogmvj.png)
+![Bottom](https://stasis.hackclub-assets.com/images/1773825465453-5ogmvj.png)
 
 ## PCB
 
