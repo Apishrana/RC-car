@@ -2,9 +2,6 @@
 #include <WiFi.h>
 #include <esp_now.h>
 
-// placeholder pin 1 for pins
-// i dont have an esp for pin reference
-
 #define in1Pin 21
 #define in2Pin 19
 #define in3Pin 18
