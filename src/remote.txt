@@ -2,8 +2,8 @@
 #include <WiFi.h>
 #include <esp_now.h>
 
-#define jsVrY 4
-#define jsVrX 2
+#define jsVrY 32
+#define jsVrX 33
 
 uint8_t broadcastAddress[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}; // temp
 
@@ -34,7 +34,7 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
 }
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   WiFi.mode(WIFI_STA);
   pinMode(jsVrX, INPUT);
   pinMode(jsVrY, INPUT);
@@ -57,16 +57,16 @@ void loop() {
   jsx = analogRead(jsVrX);
   jsy = analogRead(jsVrY);
 
-  if (jsy < 480) {
+  if (jsy < 1700) {
     reversed = true;
   } else {
     reversed = false;
   }
-  if ((jsy < 400 || jsy > 600) && (jsx > 400 || jsx < 600)) {
+  if ((jsy < 1700 || jsy > 2300) && (jsx > 1700 && jsx < 2300)) {
     currComand = 1;
-  } else if (jsx < 400) {
+  } else if (jsx < 1700) {
     currComand = 2;
-  } else if (jsx > 600) {
+  } else if (jsx > 2300) {
     currComand = 3;
   } else {
     currComand = 0;
